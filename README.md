@@ -11,8 +11,8 @@
 
 4. php artisan db:seed
 
-#For running tests:
+For running tests:
 
-5.php artisan test
+5. php artisan test
 
 
