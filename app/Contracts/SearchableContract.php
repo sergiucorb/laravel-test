@@ -32,8 +32,8 @@ interface SearchableContract
      */
     public function latest() : SearchableContract;
 
-    /**
-     * @return Collection
-     */
-    public function fetch() : Collection;
+//    /**
+//     * @return Collection
+//     */
+    public function fetch();
 }

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
@@ -11,10 +13,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'content',
-        'active',
+    protected $guarded = [
     ];
 
     /**
@@ -25,4 +24,10 @@ class Post extends Model
     protected $casts = [
         'active' => 'boolean',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(Users::class);
+    }
 }
+

@@ -20,9 +20,11 @@ class HomeController extends Controller
         $ip = $request->ip();
         $response = false;
         $query = $repository->search($request->get('keyword'));
-        if ($request->getRequestUri() !== '/') {
-            $response = $permissionService->checkPermission($request, $ip);
-        }
+
+//        dd($query);
+//        if ($request->getRequestUri() !== '/') {
+//            $response = $permissionService->checkPermission($request, $ip);
+//        }
         if ($response) {
             if ($request->filled('active')) {
                 switch ((bool)$request->get('active')) {
@@ -49,5 +51,8 @@ class HomeController extends Controller
         return view('home')->with([
             'posts' => $query->fetch(),
         ]);
+
     }
+
+
 }

@@ -56,12 +56,16 @@
             @forelse($posts as $post)
                 <div class="col-md-12 mt-3 mb-3">
                     <h2>
-                        #{{ $post->id }} {{ $post->name }}
+                        #{{ $post->id }} | Title: {{ $post->title }}
+
+
+                        | User: {{$post->user->name}} |
+                        </span>
                         <span class="btn {{ $post->active ? 'btn-success' : 'btn-danger' }}">
                                 {{ $post->active ? 'Active' : 'Inactive' }}
                             </span>
                     </h2>
-                    <p>{{ $post->content }}</p>
+                    <p>{{$post->content}}</p>
                 </div>
             @empty
                 <div class="col-md-12 mt-3 mb-3">

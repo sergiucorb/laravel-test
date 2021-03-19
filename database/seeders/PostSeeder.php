@@ -17,6 +17,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+//        Post::truncate();
         $posts = Post::find(1);
         if (!$posts) {
             $this->createFakerPosts();
@@ -26,9 +27,10 @@ class PostSeeder extends Seeder
     public function createFakerPosts()
     {
         $faker = Faker::create();
-        foreach (range(1, 50) as $index) {
+        foreach (range(1, 50000) as $index) {
             DB::table('posts')->insert([
-                'name' => $faker->name,
+                'title' => $faker->city,
+                'user_id'=> rand(1, 100),
                 'content' => $faker->paragraph,
                 'active' => rand(0, 1),
                 'created_at' => Carbon::now()->addSeconds($index),
