@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/posts', [TestController::class, 'getPostsByUser'])->name('home');
+Route::get('/posts', [TestController::class, 'getPostsByUser']);
+Route::get('/users', [TestController::class, 'getUsers']);

@@ -10,4 +10,11 @@ class Users extends Model
     use HasFactory;
     protected $guarded = [];
     protected $table = 'users';
+
+
+    public function posts(){
+        return $this->hasMany(Post::class,'user_id');
+    }
+
+
 }

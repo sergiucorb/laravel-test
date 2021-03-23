@@ -59,7 +59,7 @@
                         #{{ $post->id }} | Title: {{ $post->title }}
 
 
-                        | User: {{$post->user->name}} |
+                        | User: {{$post->user ? $post->user->name : $post->name}} |
                         </span>
                         <span class="btn {{ $post->active ? 'btn-success' : 'btn-danger' }}">
                                 {{ $post->active ? 'Active' : 'Inactive' }}
